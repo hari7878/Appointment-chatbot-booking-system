@@ -1,0 +1,11 @@
+
+psycopg2-binary
+psycopg2
+dotenv
+langchain_openai
+langchain_google_genai
+langchain_anthropic
+langchain_community
+langgraph
+langgraph-checkpoint-sqlite
+streamlit
