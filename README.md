@@ -32,11 +32,17 @@ graph TD
     end
 
     subgraph "Live Local Application"
-        D[User] -- Interacts via browser --> E[Streamlit UI <br> (app.py)];
-        E -- Communicates with --> F{LangGraph Agent <br> (graph.py)};
-        F -- Uses --> G[LLM Server <br> (Ollama App or API)];
-        F -- Invokes --> H[Agent Tools <br> (search, book, etc.)];
-        H -- Queries/Updates --> C;
+        D[User]
+        E[Streamlit UI <br> (app.py)]
+        F{LangGraph Agent <br> (graph.py)}
+        G[LLM Server <br> (Ollama App or API)]
+        H[Agent Tools <br> (search, book, etc.)]
+
+        D -- Interacts via browser --> E
+        E -- Communicates with --> F
+        F -- Uses --> G
+        F -- Invokes --> H
+        H -- Queries/Updates --> C
     end
 ```
 
