@@ -20,31 +20,7 @@ The application is designed to be run locally and supports multiple LLM provider
 -   **Dynamic Configuration UI:** A user-friendly Streamlit interface allows users to provide their own LLM credentials and model settings for their session.
 
 
-## Architecture Overview
 
-The system is composed of two main parts: the offline data processing pipeline and the online interactive chatbot application, both designed to be run on a local machine.
-
-```mermaid
-graph TD
-    subgraph "Offline Data Processing Pipeline"
-        A[Synthea FHIR JSON Files] --> B{Data Processor Scripts};
-        B --> C[SQLite Database <br> synthea_fhir_data.db];
-    end
-
-    subgraph "Live Local Application"
-        D[User]
-        E[Streamlit UI <br> (app.py)]
-        F{LangGraph Agent <br> (graph.py)}
-        G[LLM Server <br> (Ollama App or API)]
-        H[Agent Tools <br> (search, book, etc.)]
-
-        D -- Interacts via browser --> E
-        E -- Communicates with --> F
-        F -- Uses --> G
-        F -- Invokes --> H
-        H -- Queries/Updates --> C
-    end
-```
 
 ## Local Setup and Installation
 
