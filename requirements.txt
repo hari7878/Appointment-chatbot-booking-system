@@ -1,6 +1,5 @@
 
 psycopg2-binary
-psycopg2
 dotenv
 langchain_openai
 langchain_google_genai
