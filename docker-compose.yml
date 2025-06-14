@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # This is now the only service defined in the file.
+  app:
+    # Build the image from the Dockerfile in the current directory.
+    build: .
+    container_name: healthsched_app
+    ports:
+      # Map your local machine's port 8501 to the container's port 8501
+      # so you can access the Streamlit UI from your browser.
+      - "8501:8501"
+    volumes:
+      # Mount your database files to make them persistent. This is still a best practice.
+      - ./synthea_fhir_data.db:/app/synthea_fhir_data.db
+      - ./chatbot_memory.sqlite:/app/chatbot_memory.sqlite
+
+    # This is now the SOLE source of configuration for the container.
+    # It reads the .env file from your project root and injects the variables.
+    env_file:
+      - .env
