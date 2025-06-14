@@ -13,11 +13,11 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))) # Add chatbot dir to path
 
 # Import revised state and tools
-from state import AgentState
-from llm_config import get_llm
+from chatbot.state import AgentState
+from chatbot.llm_config import get_llm
 # Import the combined list from the tools package __init__
-from tools import available_tools
-from prompts import SYSTEM_PROMPT
+from chatbot.tools import available_tools
+from chatbot.prompts import SYSTEM_PROMPT
 from chatbot.config import DEFAULT_PATIENT_ID
 
 # Configure logging

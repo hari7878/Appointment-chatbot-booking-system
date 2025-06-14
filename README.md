@@ -52,7 +52,7 @@ Refer the chatbot/.env file and chatbot/config.py file and add secrets.Model par
 The chatbot relies on a pre-populated SQLite database. Run the data processing pipeline to create it from your FHIR data files. This step only needs to be done once.
 Note: Before running, ensure your Synthea JSON files are placed in the correct directory as expected by the processing scripts (data_preprocessing/output/fhir directory).
 ```bash
-python -m fhir_processor.main_processor
+python -m data_preprocessing.main_processor
 ```
 
 ### 5.Running the Application

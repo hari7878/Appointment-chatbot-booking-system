@@ -2,7 +2,7 @@
 import os
 import glob
 import logging
-from config import (
+from data_preprocessing.config import (
     ALL_JSON_PATTERN,
     HOSPITAL_FILE_PREFIX,
     PRACTITIONER_FILE_PREFIX,
@@ -10,11 +10,11 @@ from config import (
     PRACTITIONER_FILE_PATTERN,
     DATABASE_NAME
 )
-from extract_hospitals import extract_hospitals
+from data_preprocessing.extract_hospitals import extract_hospitals
 # Updated import for the modified practitioner extractor
-from extract_practitioners_and_roles import extract_practitioners_schedules_slots
-from extract_patients import extract_patients_and_encounters
-from db_manager import (
+from data_preprocessing.extract_practitioners_and_roles import extract_practitioners_schedules_slots
+from data_preprocessing.extract_patients import extract_patients_and_encounters
+from data_preprocessing.db_manager import (
     create_connection, create_tables, insert_patients,
     insert_hospitals, insert_practitioners,
     insert_practitioner_roles, insert_encounters,

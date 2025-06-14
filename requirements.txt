@@ -9,3 +9,6 @@ langchain_community
 langgraph
 langgraph-checkpoint-sqlite
 streamlit
+langchain_ollama
+langchain_deepseek
+langchain_qwq
