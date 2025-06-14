@@ -1,0 +1,59 @@
+# .dockerignore
+
+# --- Git and Version Control ---
+# The .git folder can be huge and is not needed in the image
+.git
+.gitignore
+
+# --- Docker & Compose Files ---
+# These are used to build the image, but shouldn't be inside it
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# --- Python Virtual Environments ---
+# This is the most important one to exclude. Virtual environment folders
+# can be very large and contain system-specific binaries.
+.venv
+venv
+
+# --- Python Cache & Compiled Files ---
+# These are generated at runtime and will be created inside the container anyway
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# --- Local Data & Memory Files ---
+# These should be managed with Docker Volumes, NOT copied into the image.
+# This prevents your personal test data from being baked into the image.
+*.db
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# --- Environment & Configuration ---
+# Your secrets file should never be in the image. It will be injected
+# by docker-compose's env_file directive at runtime.
+.env
+
+# --- IDE & OS Specific Files ---
+# These are specific to your development environment and not needed in production
+.idea/
+.vscode/
+*.DS_Store
+*.suo
+*.user
+nbproject/
+
+# --- Test Artifacts & Logs ---
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+logs/
+
+# --- Build & Distribution Artifacts ---
+build/
+dist/
+*.egg-info/
