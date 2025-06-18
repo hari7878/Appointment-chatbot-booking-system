@@ -1,8 +1,6 @@
 # HealthSched AI: A Medical Appointment Chatbot
 
-<p align="center">
-  <img src="demo/demo-appointment-chatbot.gif" alt="HealthSched AI Demo" width="700"/>
-</p>
+
 
 HealthSched AI is a  conversational AI agent designed to streamline the medical appointment scheduling process. Built on a foundation of synthetic FHIR data, this project features a robust data processing pipeline and a powerful LangGraph-based agent capable of understanding user requests, searching for providers, checking availability, and managing appointments.
 
